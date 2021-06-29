@@ -11,6 +11,8 @@ import datetime
 import threading
 # import sys
 from multiprocessing import Process
+import logging
+logging.basicConfig(filename="test.log", level=logging.DEBUG)
 #  追記　 ここから
 #  global flag
 #  flag=0
@@ -161,7 +163,10 @@ class Application(tk.Frame):
             shutil.rmtree(yesterday.strftime('%Y%m%d'))
         except OSError as err:
             print("OS error: {0}".format(err))
+            logging.error("OS error: {0}".format(err))
             # print("NONONO")
+            logging.error("NONONO")
+            
 
         # フォルダの作成
         folder_name = dt_now.strftime('%Y%m%d')
@@ -170,6 +175,7 @@ class Application(tk.Frame):
 
         video_name = folder_name + "/" + dt_now.strftime('%Y%m%d%H%M%S') + ".mp4"
         print(video_name)
+        logging.error(video_name)
 
         # 動画ファイルの保存
 
@@ -188,6 +194,7 @@ class Application(tk.Frame):
 
 def test111():
     print("HELLO PYTHON")
+    logging.error("HELLO PYTHON")
 
 
 def main():
