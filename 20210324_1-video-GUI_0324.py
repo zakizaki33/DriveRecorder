@@ -41,10 +41,14 @@ class Application(tk.Frame):
         self.font_btn_small = font.Font(
             family="Meiryo UI", size=15, weight="bold")
 
-        self.font_lbl_bigger = font.Font(family="Meiryo UI", size=45, weight="bold")
-        self.font_lbl_big = font.Font(family="Meiryo UI", size=30, weight="bold")
-        self.font_lbl_middle = font.Font(family="Meiryo UI", size=15, weight="bold")
-        self.font_lbl_small = font.Font(family="Meiryo UI", size=12, weight="normal")
+        self.font_lbl_bigger = font.Font(
+            family="Meiryo UI", size=45, weight="bold")
+        self.font_lbl_big = font.Font(
+            family="Meiryo UI", size=30, weight="bold")
+        self.font_lbl_middle = font.Font(
+            family="Meiryo UI", size=15, weight="bold")
+        self.font_lbl_small = font.Font(
+            family="Meiryo UI", size=12, weight="normal")
 
         # ---------------------------------------------------------
         # Open the video source
@@ -71,9 +75,12 @@ class Application(tk.Frame):
     def create_widgets(self):
 
         # Frame_Camera
-        self.frame_cam = tk.LabelFrame(self.master, text='Camera', font=self.font_frame)
-        self.frame_cam.place(x=10, y=10)
-        self.frame_cam.configure(width=self.width + 30, height=self.height + 50)
+        self.frame_cam = tk.LabelFrame(
+            self.master, text='Camera', font=self.font_frame)
+        self.frame_cam.place(
+            x=10, y=10)
+        self.frame_cam.configure(
+            width=self.width + 30, height=self.height + 50)
         self.frame_cam.grid_propagate(0)
 
         # Canvas
@@ -82,7 +89,8 @@ class Application(tk.Frame):
         self.canvas1.grid(column=0, row=0, padx=10, pady=10)
 
         # Frame_Button
-        self.frame_btn = tk.LabelFrame(self.master, text='Control', font=self.font_frame)
+        self.frame_btn = tk.LabelFrame(
+            self.master, text='Control', font=self.font_frame)
         self.frame_btn.place(x=10, y=550)
         self.frame_btn.configure(width=self.width + 30, height=120)
         self.frame_btn.grid_propagate(0)
@@ -90,24 +98,29 @@ class Application(tk.Frame):
         # Snapshot Button
         # https://www.shido.info/py/tkinter2.html
         # btnを”録画スタート だよ”という表示で作る
-        self.btn_snapshot = tk.Button(self.frame_btn, text='録画スタート だよ', font=self.font_btn_big)
+        self.btn_snapshot = tk.Button(
+            self.frame_btn, text='録画スタート だよ', font=self.font_btn_big)
         # ボタンが押された時に、press_snapshot_button を発動する
-        self.btn_snapshot.configure(width=20, height=1, command=self.press_snapshot_button)
+        self.btn_snapshot.configure(
+            width=20, height=1, command=self.press_snapshot_button)
         self.btn_snapshot.grid(column=0, row=0, padx=20, pady=10)
 
         # 追記ZAKI　2021-05-17　ここから　
         # label
         text1 = "録画停止中"
-        text2 = "録画実行中"
+
         words1 = tk.Label(text=text1, font=("", 12))
         words1.pack()
         # words1.place(x=500, y=500)
         # 追記　ここまで　
 
         # Close
-        self.btn_close = tk.Button(self.frame_btn, text='Close', font=self.font_btn_big)
-        self.btn_close.configure(width=15, height=1, command=self.press_close_button)
+        self.btn_close = tk.Button(
+            self.frame_btn, text='Close', font=self.font_btn_big)
+        self.btn_close.configure(
+            width=15, height=1, command=self.press_close_button)
         self.btn_close.grid(column=1, row=0, padx=20, pady=10)
+        logging.debug("button pushed !!!")
 
     def update(self):
         # Get a frame from the video source
@@ -153,7 +166,7 @@ class Application(tk.Frame):
         w = self.vcap.get(cv2.CAP_PROP_FRAME_WIDTH)
         h = self.vcap.get(cv2.CAP_PROP_FRAME_HEIGHT)
         fps = int(self.vcap.get(cv2.CAP_PROP_FPS))
-        fourcc = cv2.VideoWriter_fourcc('m', 'p', '4', 'v')        # 動画保存時のfourcc設定（mp4用）
+        fourcc = cv2.VideoWriter_fourcc('m', 'p', '4', 'v')
 
         dt_now = datetime.datetime.now()
 
@@ -166,26 +179,25 @@ class Application(tk.Frame):
             logging.error("OS error: {0}".format(err))
             # print("NONONO")
             logging.error("NONONO")
-            
 
         # フォルダの作成
         folder_name = dt_now.strftime('%Y%m%d')
         if not os.path.isdir(folder_name):
             os.mkdir(folder_name)
 
-        video_name = folder_name + "/" + dt_now.strftime('%Y%m%d%H%M%S') + ".mp4"
+        video_name = folder_name + "/" + dt_now.strftime(
+            '%Y%m%d%H%M%S') + ".mp4"
         print(video_name)
         logging.error(video_name)
 
         # 動画ファイルの保存
-
-        video = cv2.VideoWriter(video_name, fourcc, fps, (int(w), int(h)))  # 動画の仕様（ファイル名、fourcc, FPS, サイズ）
-
+        # 動画の仕様（ファイル名、fourcc, FPS, サイズ）
+        video = cv2.VideoWriter(video_name, fourcc, fps, (int(w), int(h)))
         # 動画の保存処理
         count = 0
         while True:
             _, frame = self.vcap.read()
-            video.write(frame)                                     # 動画を1フレームずつ保存する
+            video.write(frame)        # 動画を1フレームずつ保存する
 
             count = count + 1
             if count == (fps * 15):
@@ -211,3 +223,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    logging.debug("main start!!!")
