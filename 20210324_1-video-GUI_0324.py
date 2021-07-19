@@ -4,12 +4,11 @@ import cv2
 import PIL.Image
 import PIL.ImageTk
 from tkinter import font
-# import time
+import datetime
 import shutil
 import os
-import datetime
 import threading
-# import sys
+import sys
 from multiprocessing import Process
 import logging
 logging.basicConfig(filename="test.log", level=logging.DEBUG)
@@ -55,6 +54,14 @@ class Application(tk.Frame):
         # ---------------------------------------------------------
 
         self.vcap = cv2.VideoCapture(video_source)
+        # https://note.nkmk.me/python-opencv-videocapture-file-camera/
+        logging.debug(datetime.datetime.now())
+        logging.debug(type(self.vcap))
+        logging.debug(self.vcap.isOpened())
+        if self.vcap.isOpened() is False:
+            logging.debug("There is no Camera")
+            sys.exit()
+
         self.width = self.vcap.get(cv2.CAP_PROP_FRAME_WIDTH)
         self.height = self.vcap.get(cv2.CAP_PROP_FRAME_HEIGHT)
         self.fps = int(self.vcap.get(cv2.CAP_PROP_FPS))
