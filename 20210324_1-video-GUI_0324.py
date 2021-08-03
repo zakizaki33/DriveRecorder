@@ -5,6 +5,7 @@ import PIL.Image
 import PIL.ImageTk
 from tkinter import font
 import datetime
+import time
 import shutil
 import os
 import threading
@@ -60,6 +61,11 @@ class Application(tk.Frame):
         logging.debug(self.vcap.isOpened())
         if self.vcap.isOpened() is False:
             logging.debug("There is no Camera")
+            var = tk.StringVar()
+            var.set("There is no Camera")
+            self.words1 = tk.Label(textvariable=var, font=("", 12))
+            self.words1.pack()
+            time.sleep(3)
             sys.exit()
 
         self.width = self.vcap.get(cv2.CAP_PROP_FRAME_WIDTH)
