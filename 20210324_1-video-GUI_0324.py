@@ -217,23 +217,22 @@ class Application(tk.Frame):
                 break
 
 
-def test111():
-    print("HELLO PYTHON")
-    logging.error("HELLO PYTHON")
-
-
 def main():
 
     root = tk.Tk()
 
     # http://utisam.hateblo.jp/entry/2013/01/12/212958
-    root.state('zoomed')  # when windows
-    # root.attributes("-zoomed","1") # when Linux & Mac
-
+    
+    import platform
+    if platform.system() == "Windows":
+        root.state('zoomed')  # when windows
+    else:
+        root.attributes("-zoomed","1") # when Linux & Mac
+    
     app = Application(master=root)  # Inherit
     app.mainloop()
 
 
 if __name__ == "__main__":
+    logging.info("main start!!!")
     main()
-    logging.debug("main start!!!")
