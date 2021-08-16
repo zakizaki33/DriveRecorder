@@ -1,2 +1,92 @@
+
+DEBUG:root:2021-08-03 10:10:20.954949
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
 DEBUG:root:button pushed !!!
 DEBUG:root:main start!!!
+DEBUG:root:2021-08-03 10:12:51.913313
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+DEBUG:root:button pushed !!!
+DEBUG:root:main start!!!
+DEBUG:root:2021-08-03 10:17:47.883943
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+DEBUG:root:button pushed !!!
+DEBUG:root:main start!!!
+DEBUG:root:2021-08-03 10:18:25.017827
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+DEBUG:root:There is no Camera
+DEBUG:root:2021-08-03 10:18:35.677050
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+DEBUG:root:There is no Camera
+DEBUG:root:2021-08-03 10:18:49.660689
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+DEBUG:root:There is no Camera
+DEBUG:root:2021-08-03 10:19:11.991196
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+DEBUG:root:button pushed !!!
+DEBUG:root:main start!!!
+DEBUG:root:2021-08-03 10:23:36.711307
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+DEBUG:root:button pushed !!!
+INFO:root:main start!!!
+DEBUG:root:2021-08-03 10:26:17.926276
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+DEBUG:root:button pushed !!!
+INFO:root:main start!!!
+DEBUG:root:2021-08-04 19:50:06.938205
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+DEBUG:root:There is no Camera
+DEBUG:root:2021-08-04 20:09:26.501236
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+DEBUG:root:There is no Camera
+DEBUG:root:2021-08-04 20:10:11.315975
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+DEBUG:root:There is no Camera
+DEBUG:root:2021-08-04 20:11:02.795402
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+DEBUG:root:button pushed !!!
+INFO:root:main start!!!
+DEBUG:root:2021-08-04 20:11:30.298565
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+DEBUG:root:button pushed !!!
+INFO:root:main start!!!
+DEBUG:root:2021-08-04 20:11:57.374774
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+DEBUG:root:button pushed !!!
+DEBUG:root:2021-08-04 20:13:08.296737
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+DEBUG:root:button pushed !!!
+INFO:root:main start!!!
+DEBUG:root:2021-08-04 20:14:08.611718
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+DEBUG:root:button pushed !!!
+INFO:root:main start!!!
+DEBUG:root:2021-08-05 09:36:51.560211
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+DEBUG:root:button pushed !!!
+INFO:root:main start!!!
+DEBUG:root:2021-08-05 09:38:26.231798
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+DEBUG:root:button pushed !!!
+INFO:root:main start!!!
+INFO:root:main start!!!
+INFO:root:main start!!!
+INFO:root:main start!!!

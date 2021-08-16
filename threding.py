@@ -37,14 +37,14 @@ print("盛り付けます")
 print("完成しました")
 
 
-'''
+
 # https://note.nkmk.me/python-listdir-isfile-isdir/
 
 # プログラムのプロセスを考える
 # 1　フォルダーのリストを取得
 # 2 残りの容量をチェックする
 # 3 容量OVERの場合、一番古いものを削除する(ファイルないしフォルダーを削除する)
-
+'''
 import os
 path = "./DATA"
 # 勝手に名前順にリストを作ってくれるようだ
@@ -63,7 +63,7 @@ print(os.path.abspath(__file__))
 
 if(not(os.path.exists(yyyymmdd))):
     os.mkdir(yyyymmdd)
-    
+'''    
 
 # ファイルおよびフォルダを消す作業
 # DATAフォルダを作成しておいて、そこに作成された動画がたまっている前提。
@@ -79,4 +79,4 @@ print(f'Total:{total/(10**9)}GB')
 print(f'Used:{used/(10**9)}GB')
 print(f'Free:{free/(10**9)}GB')
 
-'''
+
