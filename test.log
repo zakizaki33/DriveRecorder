@@ -90,3 +90,134 @@ INFO:root:main start!!!
 INFO:root:main start!!!
 INFO:root:main start!!!
 INFO:root:main start!!!
+INFO:root:main start!!!
+DEBUG:root:2021-08-17 17:07:23.828301
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+DEBUG:root:button pushed !!!
+INFO:root:main start!!!
+DEBUG:root:2021-08-17 17:10:16.141814
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+DEBUG:root:button pushed !!!
+INFO:root:main start!!!
+DEBUG:root:2021-08-17 17:11:59.862783
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+DEBUG:root:button pushed !!!
+INFO:root:main start!!!
+DEBUG:root:2021-08-17 20:17:33.149158
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+DEBUG:root:button pushed !!!
+INFO:root:main start!!!
+DEBUG:root:2021-08-17 20:20:36.434939
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+DEBUG:root:button pushed !!!
+INFO:root:main start!!!
+DEBUG:root:2021-08-17 20:20:42.629576
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+DEBUG:root:button pushed !!!
+INFO:root:main start!!!
+DEBUG:root:2021-08-17 20:22:38.893647
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+DEBUG:root:button pushed !!!
+INFO:root:main start!!!
+DEBUG:root:2021-08-17 20:25:14.378962
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+DEBUG:root:button pushed !!!
+INFO:root:main start!!!
+DEBUG:root:2021-08-17 20:25:45.143880
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+DEBUG:root:button pushed !!!
+INFO:root:main start!!!
+DEBUG:root:2021-08-17 20:26:04.246475
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+DEBUG:root:button pushed !!!
+INFO:root:main start!!!
+DEBUG:root:2021-08-17 20:26:19.255705
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+DEBUG:root:button pushed !!!
+INFO:root:main start!!!
+DEBUG:root:2021-08-17 20:26:40.603180
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+DEBUG:root:button pushed !!!
+INFO:root:main start!!!
+DEBUG:root:2021-08-17 20:32:53.310074
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+DEBUG:root:button pushed !!!
+INFO:root:main start!!!
+DEBUG:root:2021-08-17 20:33:35.642514
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+DEBUG:root:button pushed !!!
+INFO:root:main start!!!
+DEBUG:root:2021-08-17 20:41:40.846993
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+DEBUG:root:button pushed !!!
+INFO:root:snapshot_button pushed!!!
+INFO:root:snapshot_button pushed!!!
+INFO:root:snapshot_button pushed!!!
+INFO:root:snapshot_button pushed!!!
+INFO:root:snapshot_button pushed!!!
+INFO:root:snapshot_button pushed!!!
+INFO:root:snapshot_button pushed!!!
+INFO:root:snapshot_button pushed!!!
+INFO:root:snapshot_button pushed!!!
+INFO:root:snapshot_button pushed!!!
+INFO:root:snapshot_button pushed!!!
+INFO:root:snapshot_button pushed!!!
+INFO:root:snapshot_button pushed!!!
+INFO:root:snapshot_button pushed!!!
+INFO:root:snapshot_button pushed!!!
+INFO:root:snapshot_button pushed!!!
+INFO:root:snapshot_button pushed!!!
+INFO:root:snapshot_button pushed!!!
+INFO:root:snapshot_button pushed!!!
+INFO:root:snapshot_button pushed!!!
+INFO:root:snapshot_button pushed!!!
+INFO:root:main start!!!
+DEBUG:root:2021-08-17 20:43:47.777250
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+DEBUG:root:button pushed !!!
+INFO:root:main start!!!
+DEBUG:root:2021-08-17 20:48:28.037616
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+DEBUG:root:button pushed !!!
+INFO:root:snapshot_button pushed!!!
+INFO:root:snapshot_button pushed!!!
+INFO:root:snapshot_button pushed!!!
+INFO:root:snapshot_button pushed!!!
+INFO:root:main start!!!
+DEBUG:root:2021-08-17 20:50:41.242955
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+DEBUG:root:button pushed !!!
+INFO:root:snapshot_button pushed!!!
+INFO:root:snapshot_button pushed!!!
+INFO:root:snapshot_button pushed!!!
+INFO:root:main start!!!
+DEBUG:root:2021-08-17 20:51:09.678791
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+DEBUG:root:button pushed !!!
+INFO:root:snapshot_button pushed!!!
+INFO:root:main start!!!
+DEBUG:root:2021-08-17 20:52:38.335456
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+DEBUG:root:button pushed !!!
+INFO:root:snapshot_button pushed!!!
+INFO:root:snapshot_button pushed!!!

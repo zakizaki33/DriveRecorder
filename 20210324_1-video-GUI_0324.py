@@ -61,9 +61,9 @@ class Application(tk.Frame):
         logging.debug(self.vcap.isOpened())
         if self.vcap.isOpened() is False:
             logging.debug("There is no Camera")
-            var = tk.StringVar()
-            var.set("There is no Camera")
-            self.words1 = tk.Label(textvariable=var, font=("", 12))
+            self.var = tk.StringVar()
+            self.var.set("There is no Camera")
+            self.words1 = tk.Label(textvariable=self.var, font=("", 12))
             self.words1.pack()
             time.sleep(3)
             sys.exit()
@@ -115,16 +115,16 @@ class Application(tk.Frame):
             self.frame_btn, text='録画スタート だよ', font=self.font_btn_big)
         # ボタンが押された時に、press_snapshot_button を発動する
         self.btn_snapshot.configure(
-            width=20, height=1, command=self.press_snapshot_button)
+            width=15, height=1, command=self.press_snapshot_button)
         self.btn_snapshot.grid(column=0, row=0, padx=20, pady=10)
 
         # 追記ZAKI　2021-05-17　ここから　
         # label
         text1 = "録画停止中"
 
-        words1 = tk.Label(text=text1, font=("", 12))
-        words1.pack()
-        # words1.place(x=500, y=500)
+        self.words1 = tk.Label(text=text1, font=("", 12))
+        # words1.pack()
+        self.words1.place(x=800, y=100)
         # 追記　ここまで　
 
         # Close
@@ -148,6 +148,10 @@ class Application(tk.Frame):
         self.master.after(self.delay, self.update)
 
     def press_snapshot_button(self):
+        # ラベルにログを表示させる
+        logging.info("snapshot_button pushed!!!")
+        # self.var.set("snapshot_button pushed!!!")
+        self.words1["text"] = "snapshot_button pushed!!!"
         # 録画スタート
         # スレッドではなくて、プロセスを使うらしい？
         # https://qiita.com/ttiger55/items/5e1d5a3405d2b3ef8f40
