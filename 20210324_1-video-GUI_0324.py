@@ -25,7 +25,7 @@ class Application(tk.Frame):
     flag = 0
     t1 = threading
 
-    def __init__(self, master, video_source=0):
+    def __init__(self, master, video_source=1):
         super().__init__(master)
 
         self.master.geometry("700x700")
@@ -122,9 +122,11 @@ class Application(tk.Frame):
         # label
         text1 = "録画停止中"
 
-        self.words1 = tk.Label(text=text1, font=("", 12))
-        # words1.pack()
+        self.words1 = tk.Label(text=text1, font=("", 24))
         self.words1.place(x=800, y=100)
+        self.words2 = tk.Label(text=text1, font=("", 36))
+        self.words2.place(x=800, y=200)
+
         # 追記　ここまで　
 
         # Close
@@ -151,13 +153,14 @@ class Application(tk.Frame):
         # ラベルにログを表示させる
         logging.info("snapshot_button pushed!!!")
         # self.var.set("snapshot_button pushed!!!")
-        self.words1["text"] = "snapshot_button pushed!!!"
+        self.words2["text"] = "snapshot_button pushed!!!"
         # 録画スタート
         # スレッドではなくて、プロセスを使うらしい？
         # https://qiita.com/ttiger55/items/5e1d5a3405d2b3ef8f40
 
         # threading.Thread(target=self.video_recode).start()
-        Process(target=self.video_recode).start()
+        # ↓録画をうまく開始できないので一旦消す。　★★★
+        # Process(target=self.video_recode).start()
         # Process(target=test111).start()
         # ppp= Process(target=test111)
         # ppp.start()
@@ -168,10 +171,12 @@ class Application(tk.Frame):
         if (self.flag == 0):
             # self.t1.start()
             self.btn_snapshot.configure(text="STOP だよ")
+            self.words1.configure(text="録画実行中")
             self.flag = 1
         else:
             # sys.exit()
             self.btn_snapshot.configure(text="録画START だよ")
+            self.words1.configure(text="録画停止中")
             self.flag = 0
 
     def press_close_button(self):
