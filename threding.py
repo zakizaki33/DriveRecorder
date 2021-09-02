@@ -1,5 +1,6 @@
 # https://qiita.com/tchnkmr/items/b05f321fa315bbce4f77
 # [Python] スレッドで実装する
+import os
 import shutil
 import datetime
 import time
@@ -11,10 +12,13 @@ def boil_udon():
     time.sleep(3)
     print("麺が茹であがりました")
 
+
 def make_tuyu():
     print("  つゆを作ります")
     time.sleep(2)
     print("  つゆが出来上がりました")
+
+
 '''
 print("うどんを作ります 1回目")
 boil_udon()
@@ -23,8 +27,8 @@ print("盛り付けます")
 print("完成しました")
 '''
 print("うどんを作ります ２回目")
-threading1 =threading.Thread(target=boil_udon)
-threading2 =threading.Thread(target=make_tuyu)
+threading1 = threading.Thread(target=boil_udon)
+threading2 = threading.Thread(target=make_tuyu)
 
 # start と　joinをセットにしないと上手く、スレッディングが出来ないのはなんでだ？
 threading1.start()
@@ -37,33 +41,37 @@ print("盛り付けます")
 print("完成しました")
 
 
-
 # https://note.nkmk.me/python-listdir-isfile-isdir/
 
 # プログラムのプロセスを考える
 # 1　フォルダーのリストを取得
 # 2 残りの容量をチェックする
 # 3 容量OVERの場合、一番古いものを削除する(ファイルないしフォルダーを削除する)
-'''
-import os
-path = "./DATA"
+
+path = "./"
+# path = "./DATA"
 # 勝手に名前順にリストを作ってくれるようだ
 list1 = os.listdir(path)
 print(list1)
 print(list1[0])
 
-dt_now=datetime.datetime.now()
-yyyymmdd =dt_now.strftime("%Y%m%d")
+# https://blog.codecamp.jp/python-list
+# リストの中身を確認して、todayより古ければ削除する（文字数も８文字である事を同時の考慮？）
+for i in list1:
+    print(i)
+
+dt_now = datetime.datetime.now()
+yyyymmdd = dt_now.strftime("%Y%m%d")
 print(yyyymmdd)
 
-
-print  ("    current_directory = os.path.dirname(os.path.abspath(__file__))") 
+'''
+print  ("    current_directory = os.path.dirname(os.path.abspath(__file__))")
 print(os.path.dirname(os.path.abspath(__file__)))
 print(os.path.abspath(__file__))
 
 if(not(os.path.exists(yyyymmdd))):
     os.mkdir(yyyymmdd)
-'''    
+'''
 
 # ファイルおよびフォルダを消す作業
 # DATAフォルダを作成しておいて、そこに作成された動画がたまっている前提。
@@ -78,5 +86,3 @@ print('---------------------------')
 print(f'Total:{total/(10**9)}GB')
 print(f'Used:{used/(10**9)}GB')
 print(f'Free:{free/(10**9)}GB')
-
-
