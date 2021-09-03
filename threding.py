@@ -65,9 +65,14 @@ for i in list1:
     yesterday = dt_now - datetime.timedelta(days=1)
     print(yesterday.strftime('%Y%m%d'))
     if(len(i) == 8 and i < yesterday.strftime('%Y%m%d')):
-        print("folder delete")
-        shutil.rmtree(os.path.dirname(os.path.abspath(__file__)) + "/" + i)
-        # shutil.rmtree(yesterday.strftime('%Y%m%d'))
+        
+        total, used, free = shutil.disk_usage("/")
+        print('-------Data Check--------------------')
+        print(f'Free:{free/(10**9)}GB')
+        if(252.220 > free / (10**9)):
+            print("folder delete")
+            shutil.rmtree(os.path.dirname(os.path.abspath(__file__)) + "/" + i)
+            # shutil.rmtree(yesterday.strftime('%Y%m%d'))
 
 
 dt_now = datetime.datetime.now()
