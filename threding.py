@@ -52,6 +52,7 @@ path = "./"
 # path = "./DATA"
 # 勝手に名前順にリストを作ってくれるようだ
 list1 = os.listdir(path)
+print(path)
 print(list1)
 print(list1[0])
 
@@ -59,16 +60,25 @@ print(list1[0])
 # リストの中身を確認して、todayより古ければ削除する（文字数も８文字である事を同時の考慮？）
 for i in list1:
     print(i)
+    print(len(i))
+    dt_now = datetime.datetime.now()
+    yesterday = dt_now - datetime.timedelta(days=1)
+    print(yesterday.strftime('%Y%m%d'))
+    if(len(i) == 8 and i < yesterday.strftime('%Y%m%d')):
+        print("folder delete")
+        shutil.rmtree(os.path.dirname(os.path.abspath(__file__)) + "/" + i)
+        # shutil.rmtree(yesterday.strftime('%Y%m%d'))
+
 
 dt_now = datetime.datetime.now()
 yyyymmdd = dt_now.strftime("%Y%m%d")
 print(yyyymmdd)
 
-'''
-print  ("    current_directory = os.path.dirname(os.path.abspath(__file__))")
+print("    current_directory = os.path.dirname(os.path.abspath(__file__))")
 print(os.path.dirname(os.path.abspath(__file__)))
 print(os.path.abspath(__file__))
 
+'''
 if(not(os.path.exists(yyyymmdd))):
     os.mkdir(yyyymmdd)
 '''

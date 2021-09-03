@@ -343,3 +343,43 @@ INFO:root:snapshot_button pushed!!!
 INFO:root:snapshot_button pushed!!!
 INFO:root:snapshot_button pushed!!!
 INFO:root:snapshot_button pushed!!!
+INFO:root:main start!!!
+DEBUG:root:2021-09-01 10:44:27.930549
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+DEBUG:root:button pushed !!!
+INFO:root:snapshot_button pushed!!!
+INFO:root:snapshot_button pushed!!!
+INFO:root:snapshot_button pushed!!!
+INFO:root:snapshot_button pushed!!!
+INFO:root:snapshot_button pushed!!!
+INFO:root:main start!!!
+DEBUG:root:2021-09-01 10:44:39.051165
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+DEBUG:root:button pushed !!!
+INFO:root:snapshot_button pushed!!!
+INFO:root:snapshot_button pushed!!!
+INFO:root:snapshot_button pushed!!!
+INFO:root:snapshot_button pushed!!!
+INFO:root:snapshot_button pushed!!!
+INFO:root:main start!!!
+DEBUG:root:2021-09-03 15:44:45.474343
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:False
+DEBUG:root:There is no Camera
+INFO:root:main start!!!
+DEBUG:root:2021-09-03 15:45:18.005914
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:False
+DEBUG:root:There is no Camera
+INFO:root:main start!!!
+DEBUG:root:2021-09-03 15:45:46.533943
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:False
+DEBUG:root:There is no Camera
+INFO:root:main start!!!
+DEBUG:root:2021-09-03 15:46:49.730982
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:False
+DEBUG:root:There is no Camera
