@@ -25,8 +25,14 @@ class Application(tk.Frame):
     flag = 0
     t1 = threading
 
-    def __init__(self, master, video_source=1):
+    def __init__(self, master, video_source=0):
         super().__init__(master)
+
+        # ---------------------------------------------------------
+        # clean_folder
+        # ---------------------------------------------------------
+        self.clean_folder()
+
 
         self.master.geometry("700x700")
         self.master.title("Tkinter with Video Streaming and Capture")
@@ -224,6 +230,42 @@ class Application(tk.Frame):
             count = count + 1
             if count == (fps * 15):
                 break
+            
+    def clean_folder(self):
+        path = "./"
+        # path = "./DATA"
+        # 勝手に名前順にリストを作ってくれるようだ
+        list1 = os.listdir(path)
+        print(path)
+        print(list1)
+        print(list1[0])
+
+        # https://blog.codecamp.jp/python-list
+        # リストの中身を確認して、todayより古ければ削除する（文字数も８文字である事を同時の考慮？）
+        for i in list1:
+            print(i)
+            print(len(i))
+            dt_now = datetime.datetime.now()
+            yesterday = dt_now - datetime.timedelta(days=1)
+            print(yesterday.strftime('%Y%m%d'))
+            if(len(i) == 8 and i < yesterday.strftime('%Y%m%d')):
+                
+                total, used, free = shutil.disk_usage("/")
+                print('-------Data Check--------------------')
+                print(f'Free:{free/(10**9)}GB')
+                if(252.220 > free / (10**9)):
+                    print("folder delete")
+                    shutil.rmtree(os.path.dirname(os.path.abspath(__file__)) + "/" + i)
+                    # shutil.rmtree(yesterday.strftime('%Y%m%d'))
+
+
+        dt_now = datetime.datetime.now()
+        yyyymmdd = dt_now.strftime("%Y%m%d")
+        print(yyyymmdd)
+
+        print("    current_directory = os.path.dirname(os.path.abspath(__file__))")
+        print(os.path.dirname(os.path.abspath(__file__)))
+        print(os.path.abspath(__file__))
 
 
 def main():
