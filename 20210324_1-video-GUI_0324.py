@@ -10,7 +10,7 @@ import shutil
 import os
 import threading
 import sys
-from multiprocessing import Process
+# from multiprocessing import Process
 import logging
 logging.basicConfig(filename="test.log", level=logging.DEBUG)
 #  追記　 ここから
@@ -25,14 +25,14 @@ class Application(tk.Frame):
     flag = 0
     t1 = threading
 
-    def __init__(self, master, video_source=0):
+    # 内蔵カメラの時は0,外付けUSBカメラの時は1にする
+    def __init__(self, master, video_source=1):
         super().__init__(master)
 
         # ---------------------------------------------------------
         # clean_folder
         # ---------------------------------------------------------
         self.clean_folder()
-
 
         self.master.geometry("700x700")
         self.master.title("Tkinter with Video Streaming and Capture")
@@ -255,15 +255,15 @@ class Application(tk.Frame):
                 print(f'Free:{free/(10**9)}GB')
                 if(252.220 > free / (10**9)):
                     print("folder delete")
-                    shutil.rmtree(os.path.dirname(os.path.abspath(__file__)) + "/" + i)
+                    shutil.rmtree(
+                        os.path.dirname(os.path.abspath(__file__)) + "/" + i)
                     # shutil.rmtree(yesterday.strftime('%Y%m%d'))
-
 
         dt_now = datetime.datetime.now()
         yyyymmdd = dt_now.strftime("%Y%m%d")
         print(yyyymmdd)
 
-        print("    current_directory = os.path.dirname(os.path.abspath(__file__))")
+        print("current_directory = os.path.dirname(os.path.abspath(__file__))")
         print(os.path.dirname(os.path.abspath(__file__)))
         print(os.path.abspath(__file__))
 
