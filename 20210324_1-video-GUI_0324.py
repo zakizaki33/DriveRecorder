@@ -5,28 +5,23 @@ import PIL.Image
 import PIL.ImageTk
 from tkinter import font
 import datetime
-import time
+# import time
 import shutil
 import os
 import threading
 import sys
 # from multiprocessing import Process
+import platform
 import logging
 logging.basicConfig(filename="test.log", level=logging.DEBUG)
-#  追記　 ここから
-#  global flag
-#  flag=0
-#  追記　 ここまで
-#  testtestest
 
 
 class Application(tk.Frame):
 
     flag = 0
-    t1 = threading
-
+    
     # 内蔵カメラの時は0,外付けUSBカメラの時は1にする
-    def __init__(self, master, video_source=1):
+    def __init__(self, master, video_source=0):
         super().__init__(master)
 
         # ---------------------------------------------------------
@@ -34,6 +29,9 @@ class Application(tk.Frame):
         # ---------------------------------------------------------
         self.clean_folder()
 
+        # ---------------------------------------------------------
+        # setting_window
+        # ---------------------------------------------------------
         self.master.geometry("700x700")
         self.master.title("Tkinter with Video Streaming and Capture")
 
@@ -58,20 +56,20 @@ class Application(tk.Frame):
 
         # ---------------------------------------------------------
         # Open the video source
-        # ---------------------------------------------------------
-
-        self.vcap = cv2.VideoCapture(video_source)
         # https://note.nkmk.me/python-opencv-videocapture-file-camera/
+        # ---------------------------------------------------------
+        self.vcap = cv2.VideoCapture(video_source)
+
         logging.debug(datetime.datetime.now())
         logging.debug(type(self.vcap))
         logging.debug(self.vcap.isOpened())
         if self.vcap.isOpened() is False:
-            logging.debug("There is no Camera")
-            self.var = tk.StringVar()
-            self.var.set("There is no Camera")
-            self.words1 = tk.Label(textvariable=self.var, font=("", 12))
-            self.words1.pack()
-            time.sleep(3)
+            logging.info("There is no Camera")
+            # self.var = tk.StringVar()
+            # self.var.set("There is no Camera")
+            # self.words1 = tk.Label(textvariable=self.var, font=("", 12))
+            # self.words1.pack()
+            # time.sleep(3)
             sys.exit()
 
         self.width = self.vcap.get(cv2.CAP_PROP_FRAME_WIDTH)
@@ -81,18 +79,21 @@ class Application(tk.Frame):
         # ---------------------------------------------------------
         # Widget
         # ---------------------------------------------------------
-
         self.create_widgets()
 
         # ---------------------------------------------------------
         # Canvas Update
         # ---------------------------------------------------------
+        self.delay = 30  # millisecond
+        self.threading1 = threading.Thread(target=self.update)
+        self.threading1.start()
+        # self.update()  # ここで描画する
 
-        self.delay = 15  # [mili seconds]
-        self.update()
-
+    # ---------------------------------------------------------
+    # Create Widget
+    # https://www.shido.info/py/tkinter2.html
+    # ---------------------------------------------------------
     def create_widgets(self):
-
         # Frame_Camera
         self.frame_cam = tk.LabelFrame(
             self.master, text='Camera', font=self.font_frame)
@@ -107,6 +108,13 @@ class Application(tk.Frame):
         self.canvas1.configure(width=self.width, height=self.height)
         self.canvas1.grid(column=0, row=0, padx=10, pady=10)
 
+        # label
+        text1 = "録画停止中"
+        self.words1 = tk.Label(text=text1, font=("", 24))
+        self.words1.place(x=800, y=100)
+        self.words2 = tk.Label(text=text1, font=("", 36))
+        self.words2.place(x=800, y=200)
+
         # Frame_Button
         self.frame_btn = tk.LabelFrame(
             self.master, text='Control', font=self.font_frame)
@@ -115,44 +123,30 @@ class Application(tk.Frame):
         self.frame_btn.grid_propagate(0)
 
         # Snapshot Button
-        # https://www.shido.info/py/tkinter2.html
-        # btnを”録画スタート だよ”という表示で作る
+        # ボタンが押された時に、press_snapshot_button を発動する
         self.btn_snapshot = tk.Button(
             self.frame_btn, text='録画スタート だよ', font=self.font_btn_big)
-        # ボタンが押された時に、press_snapshot_button を発動する
         self.btn_snapshot.configure(
             width=15, height=1, command=self.press_snapshot_button)
         self.btn_snapshot.grid(column=0, row=0, padx=20, pady=10)
-
-        # 追記ZAKI　2021-05-17　ここから　
-        # label
-        text1 = "録画停止中"
-
-        self.words1 = tk.Label(text=text1, font=("", 24))
-        self.words1.place(x=800, y=100)
-        self.words2 = tk.Label(text=text1, font=("", 36))
-        self.words2.place(x=800, y=200)
-
-        # 追記　ここまで　
-
-        # Close
+        logging.info("snap button created !!! ")
+     
+        # Close Button
         self.btn_close = tk.Button(
             self.frame_btn, text='Close', font=self.font_btn_big)
         self.btn_close.configure(
             width=15, height=1, command=self.press_close_button)
         self.btn_close.grid(column=1, row=0, padx=20, pady=10)
-        logging.debug("button pushed !!!")
+        logging.info("close button created !!! ")
 
     def update(self):
         # Get a frame from the video source
         _, frame = self.vcap.read()
-
         frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         self.photo = PIL.ImageTk.PhotoImage(image=PIL.Image.fromarray(frame))
 
         # self.photo -> Canvas
         self.canvas1.create_image(0, 0, image=self.photo, anchor=tk.NW)
-
         self.master.after(self.delay, self.update)
 
     def press_snapshot_button(self):
@@ -163,7 +157,9 @@ class Application(tk.Frame):
         # 録画スタート
         # スレッドではなくて、プロセスを使うらしい？
         # https://qiita.com/ttiger55/items/5e1d5a3405d2b3ef8f40
-
+        
+        self.threading2 = threading.Thread(target=self.video_recode)
+        self.threading2.start()
         # threading.Thread(target=self.video_recode).start()
         # ↓録画をうまく開始できないので一旦消す。　★★★
         # Process(target=self.video_recode).start()
@@ -180,12 +176,12 @@ class Application(tk.Frame):
             self.words1.configure(text="録画実行中")
             self.flag = 1
         else:
-            # sys.exit()
             self.btn_snapshot.configure(text="録画START だよ")
             self.words1.configure(text="録画停止中")
             self.flag = 0
 
     def press_close_button(self):
+        self.threading1.join()  # スレッドの後片付け
         self.master.destroy()
         self.vcap.release()
 
@@ -233,7 +229,6 @@ class Application(tk.Frame):
             
     def clean_folder(self):
         path = "./"
-        # path = "./DATA"
         # 勝手に名前順にリストを作ってくれるようだ
         list1 = os.listdir(path)
         print(path)
@@ -253,6 +248,7 @@ class Application(tk.Frame):
                 total, used, free = shutil.disk_usage("/")
                 print('-------Data Check--------------------')
                 print(f'Free:{free/(10**9)}GB')
+                #  残ディスク容量を決める
                 if(252.220 > free / (10**9)):
                     print("folder delete")
                     shutil.rmtree(
@@ -269,12 +265,12 @@ class Application(tk.Frame):
 
 
 def main():
-
     root = tk.Tk()
-
+    
+    # ---------------------------------------------------------
+    # setting platform (Windows or Linux)
     # http://utisam.hateblo.jp/entry/2013/01/12/212958
-
-    import platform
+    # ---------------------------------------------------------
     if platform.system() == "Windows":
         root.state('zoomed')  # when windows
     else:
@@ -283,7 +279,8 @@ def main():
     app = Application(master=root)  # Inherit
     app.mainloop()
 
-
+    
 if __name__ == "__main__":
     logging.info("main start!!!")
     main()
+ 
