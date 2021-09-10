@@ -1,8 +1,8 @@
 # https://qiita.com/tchnkmr/items/b05f321fa315bbce4f77
 # [Python] スレッドで実装する
-import os
-import shutil
-import datetime
+# import os
+# import shutil
+# import datetime
 import time
 import threading
 
@@ -10,25 +10,35 @@ import threading
 def boil_udon():
     print("  麺を茹でます")
     time.sleep(3)
-    print("麺が茹であがりました")
+    print("  麺が茹であがりました")
 
 
 def make_tuyu():
     print("  つゆを作ります")
+
     time.sleep(2)
     print("  つゆが出来上がりました")
 
 
-'''
+def make_tuyu2(i):
+    print("  つゆを作ります")
+    print(f"waiting time = {i}")
+    time.sleep(i)
+    print("  つゆが出来上がりました")
+
+
 print("うどんを作ります 1回目")
 boil_udon()
 make_tuyu()
+# make_tuyu2(2)   #   *** A ***
 print("盛り付けます")
 print("完成しました")
-'''
+
+
 print("うどんを作ります ２回目")
 threading1 = threading.Thread(target=boil_udon)
 threading2 = threading.Thread(target=make_tuyu)
+# threading2 = threading.Thread(target=make_tuyu2(2))  # *** A ***上手く動かない。なぜ？？？
 
 # start と　joinをセットにしないと上手く、スレッディングが出来ないのはなんでだ？
 threading1.start()
@@ -40,7 +50,7 @@ threading2.join()
 print("盛り付けます")
 print("完成しました")
 
-
+'''
 # https://note.nkmk.me/python-listdir-isfile-isdir/
 
 # プログラムのプロセスを考える
@@ -65,7 +75,7 @@ for i in list1:
     yesterday = dt_now - datetime.timedelta(days=1)
     print(yesterday.strftime('%Y%m%d'))
     if(len(i) == 8 and i < yesterday.strftime('%Y%m%d')):
-        
+
         total, used, free = shutil.disk_usage("/")
         print('-------Data Check--------------------')
         print(f'Free:{free/(10**9)}GB')
@@ -82,12 +92,13 @@ print(yyyymmdd)
 print("    current_directory = os.path.dirname(os.path.abspath(__file__))")
 print(os.path.dirname(os.path.abspath(__file__)))
 print(os.path.abspath(__file__))
-
+'''
 '''
 if(not(os.path.exists(yyyymmdd))):
     os.mkdir(yyyymmdd)
 '''
 
+'''
 # ファイルおよびフォルダを消す作業
 # DATAフォルダを作成しておいて、そこに作成された動画がたまっている前提。
 # os.remove( path +"/"+ list1[0])
@@ -101,3 +112,7 @@ print('---------------------------')
 print(f'Total:{total/(10**9)}GB')
 print(f'Used:{used/(10**9)}GB')
 print(f'Free:{free/(10**9)}GB')
+
+'''
+
+print("END PROGRAM")
