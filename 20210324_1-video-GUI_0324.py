@@ -183,8 +183,10 @@ class Application(tk.Frame):
 
     def press_close_button(self):
         self.threading1.join()  # スレッドの後片付け
-        self.master.destroy()
         self.vcap.release()
+        self.video.release()
+        self.master.destroy()
+        
 
     def video_recode(self):
         # ビデオ入力取得（applicationクラスでなんとかならないか。。。）
@@ -202,8 +204,6 @@ class Application(tk.Frame):
         except OSError as err:
             print("OS error: {0}".format(err))
             logging.error("OS error: {0}".format(err))
-            # print("NONONO")
-            logging.error("NONONO")
 
         # フォルダの作成
         folder_name = dt_now.strftime('%Y%m%d')
