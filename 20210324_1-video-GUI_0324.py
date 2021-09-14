@@ -141,6 +141,7 @@ class Application(tk.Frame):
 
     def update(self):
         # Get a frame from the video source
+        # https://qiita.com/kotai2003/items/3d31528d56059c848458
         _, frame = self.vcap.read()
         frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         self.photo = PIL.ImageTk.PhotoImage(image=PIL.Image.fromarray(frame))
