@@ -132,11 +132,15 @@ class App:
     # キャンバスに表示されているカメラモジュールの映像を
     # 15ミリ秒ごとに更新する
     def update(self):
+        # 保存設定回りは関数化できるはず
         self.name = "video" + datetime.datetime.today().strftime(
             '%Y%m%d_%H%M%S') + ".mp4"
         # 保存名　video + 現在時刻 + .mp4
-        self.video = cv2.VideoWriter(
-            self.name, self.fourcc, 30.0, (self.width, self.height))
+        
+        # ここで動画ファイルが生成される。writeしないと一瞬で終わるデータにしかならない
+        # self.video = cv2.VideoWriter(
+        #     self.name, self.fourcc, 30.0, (self.width, self.height))
+
         # (保存名前、fourcc,fps,サイズ)
 
         self.dt_now = datetime.datetime.now()
@@ -156,20 +160,26 @@ class App:
             
             # 30FPS * 5sec
             # for 文したら、５秒に１回しか画面が更新されない（動画は正常っぽい）
-            for self.i in range(30 * 5):
-                # frame　取得
-                _, frame = self.vcap.read()
-                # 動画保存
-                time.sleep(1 / 1000)  # 1[msec]
-                self.video.write(frame)
-                # 色調整
-                frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-                # # 画面描画
-                self.photo = PIL.ImageTk.PhotoImage(
-                    image=PIL.Image.fromarray(frame))
-                self.canvas.create_image(
-                    0, 0, image=self.photo, anchor=tkinter.NW)
-                
+            # for self.i in range(30 * 5):
+
+            # frame　取得
+            _, frame = self.vcap.read()
+
+            # 動画保存として、一つの関数にする
+            time.sleep(1 / 1000)  # 1[msec]
+            # ここでフレームが書き込まれていく
+            # self.video.write(frame)
+
+            # 色調整
+            frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+            # 画面描画も一つの関数にしたい
+            self.photo = PIL.ImageTk.PhotoImage(
+                image=PIL.Image.fromarray(frame))
+            self.canvas.create_image(
+                0, 0, image=self.photo, anchor=tkinter.NW)
+
+        # このafter関数の場所がよくない？
+        # https://imagingsolution.net/program/python/tkinter/display_opencv_video_canvas/
         self.window.after(self.delay, self.update)
 
     # Closeボタンの処理
