@@ -86,3 +86,193 @@ INFO:root:snapshot_button pushed!!!
 ERROR:root:OS error: [WinError 3] 指定されたパスが見つかりません。: '20210909'
 ERROR:root:NONONO
 ERROR:root:20210910/20210910162024.mp4
+INFO:root:main start!!!
+DEBUG:root:2021-10-27 13:56:53.608053
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+INFO:root:snap button created !!! 
+INFO:root:close button created !!! 
+INFO:root:main start!!!
+DEBUG:root:2021-10-27 13:57:48.968144
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+INFO:root:snap button created !!! 
+INFO:root:close button created !!! 
+INFO:root:main start!!!
+DEBUG:root:2021-10-27 14:12:52.399398
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+INFO:root:snap button created !!! 
+INFO:root:close button created !!! 
+INFO:root:snapshot_button pushed!!!
+ERROR:root:OS error: [WinError 3] 指定されたパスが見つかりません。: '20211026'
+ERROR:root:20211027/20211027141256.mp4
+INFO:root:snapshot_button pushed!!!
+ERROR:root:OS error: [WinError 3] 指定されたパスが見つかりません。: '20211026'
+ERROR:root:20211027/20211027141258.mp4
+INFO:root:snapshot_button pushed!!!
+ERROR:root:OS error: [WinError 3] 指定されたパスが見つかりません。: '20211026'
+ERROR:root:20211027/20211027141259.mp4
+INFO:root:snapshot_button pushed!!!
+ERROR:root:OS error: [WinError 3] 指定されたパスが見つかりません。: '20211026'
+ERROR:root:20211027/20211027141300.mp4
+INFO:root:snapshot_button pushed!!!
+ERROR:root:OS error: [WinError 3] 指定されたパスが見つかりません。: '20211026'
+ERROR:root:20211027/20211027141301.mp4
+INFO:root:snapshot_button pushed!!!
+ERROR:root:OS error: [WinError 3] 指定されたパスが見つかりません。: '20211026'
+ERROR:root:20211027/20211027141301.mp4
+INFO:root:snapshot_button pushed!!!
+ERROR:root:OS error: [WinError 3] 指定されたパスが見つかりません。: '20211026'
+ERROR:root:20211027/20211027141301.mp4
+INFO:root:snapshot_button pushed!!!
+ERROR:root:OS error: [WinError 3] 指定されたパスが見つかりません。: '20211026'
+ERROR:root:20211027/20211027141302.mp4
+INFO:root:snapshot_button pushed!!!
+ERROR:root:OS error: [WinError 3] 指定されたパスが見つかりません。: '20211026'
+ERROR:root:20211027/20211027141302.mp4
+INFO:root:snapshot_button pushed!!!
+ERROR:root:OS error: [WinError 3] 指定されたパスが見つかりません。: '20211026'
+ERROR:root:20211027/20211027141302.mp4
+INFO:root:snapshot_button pushed!!!
+ERROR:root:OS error: [WinError 3] 指定されたパスが見つかりません。: '20211026'
+ERROR:root:20211027/20211027141303.mp4
+INFO:root:snapshot_button pushed!!!
+ERROR:root:OS error: [WinError 3] 指定されたパスが見つかりません。: '20211026'
+ERROR:root:20211027/20211027141303.mp4
+INFO:root:snapshot_button pushed!!!
+ERROR:root:OS error: [WinError 3] 指定されたパスが見つかりません。: '20211026'
+ERROR:root:20211027/20211027141303.mp4
+INFO:root:snapshot_button pushed!!!
+ERROR:root:OS error: [WinError 3] 指定されたパスが見つかりません。: '20211026'
+ERROR:root:20211027/20211027141303.mp4
+INFO:root:snapshot_button pushed!!!
+ERROR:root:OS error: [WinError 3] 指定されたパスが見つかりません。: '20211026'
+ERROR:root:20211027/20211027141304.mp4
+INFO:root:snapshot_button pushed!!!
+ERROR:root:OS error: [WinError 3] 指定されたパスが見つかりません。: '20211026'
+ERROR:root:20211027/20211027141306.mp4
+INFO:root:main start!!!
+DEBUG:root:2021-10-27 14:14:11.211760
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+INFO:root:snap button created !!! 
+INFO:root:close button created !!! 
+INFO:root:snapshot_button pushed!!!
+ERROR:root:OS error: [WinError 3] 指定されたパスが見つかりません。: '20211026'
+ERROR:root:20211027/20211027141417.mp4
+INFO:root:snapshot_button pushed!!!
+ERROR:root:OS error: [WinError 3] 指定されたパスが見つかりません。: '20211026'
+ERROR:root:20211027/20211027141426.mp4
+INFO:root:main start!!!
+DEBUG:root:2021-10-27 14:16:52.449656
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+INFO:root:snap button created !!! 
+INFO:root:close button created !!! 
+INFO:root:snapshot_button pushed!!!
+ERROR:root:OS error: [WinError 3] 指定されたパスが見つかりません。: '20211026'
+ERROR:root:20211027/20211027141656.mp4
+INFO:root:snapshot_button pushed!!!
+ERROR:root:OS error: [WinError 3] 指定されたパスが見つかりません。: '20211026'
+ERROR:root:20211027/20211027141708.mp4
+INFO:root:main start!!!
+DEBUG:root:2021-10-27 14:19:19.331276
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+INFO:root:snap button created !!! 
+INFO:root:close button created !!! 
+INFO:root:snapshot_button pushed!!!
+ERROR:root:OS error: [WinError 3] 指定されたパスが見つかりません。: '20211026'
+ERROR:root:20211027/20211027142007.mp4
+INFO:root:snapshot_button pushed!!!
+ERROR:root:OS error: [WinError 3] 指定されたパスが見つかりません。: '20211026'
+ERROR:root:20211027/20211027142018.mp4
+INFO:root:main start!!!
+DEBUG:root:2021-10-27 14:25:06.170312
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+INFO:root:snap button created !!! 
+INFO:root:close button created !!! 
+INFO:root:snapshot_button pushed!!!
+ERROR:root:OS error: [WinError 3] 指定されたパスが見つかりません。: '20211026'
+ERROR:root:20211027/20211027142508.mp4
+INFO:root:snapshot_button pushed!!!
+ERROR:root:OS error: [WinError 3] 指定されたパスが見つかりません。: '20211026'
+ERROR:root:20211027/20211027142543.mp4
+INFO:root:snapshot_button pushed!!!
+ERROR:root:OS error: [WinError 3] 指定されたパスが見つかりません。: '20211026'
+ERROR:root:20211027/20211027142556.mp4
+INFO:root:snapshot_button pushed!!!
+ERROR:root:OS error: [WinError 3] 指定されたパスが見つかりません。: '20211026'
+ERROR:root:20211027/20211027142558.mp4
+INFO:root:snapshot_button pushed!!!
+ERROR:root:OS error: [WinError 3] 指定されたパスが見つかりません。: '20211026'
+ERROR:root:20211027/20211027142600.mp4
+INFO:root:snapshot_button pushed!!!
+ERROR:root:OS error: [WinError 3] 指定されたパスが見つかりません。: '20211026'
+ERROR:root:20211027/20211027142605.mp4
+INFO:root:main start!!!
+DEBUG:root:2021-10-27 14:27:16.890286
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+INFO:root:snap button created !!! 
+INFO:root:close button created !!! 
+INFO:root:snapshot_button pushed!!!
+ERROR:root:OS error: [WinError 3] 指定されたパスが見つかりません。: '20211026'
+ERROR:root:20211027/20211027142723.mp4
+INFO:root:main start!!!
+DEBUG:root:2021-10-27 14:30:42.020629
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+INFO:root:snap button created !!! 
+INFO:root:close button created !!! 
+INFO:root:snapshot_button pushed!!!
+ERROR:root:OS error: [WinError 3] 指定されたパスが見つかりません。: '20211026'
+ERROR:root:20211027/20211027143100.mp4
+INFO:root:main start!!!
+DEBUG:root:2021-10-27 14:32:11.010526
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+INFO:root:snap button created !!! 
+INFO:root:close button created !!! 
+INFO:root:main start!!!
+DEBUG:root:2021-10-27 14:32:43.192640
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:False
+INFO:root:There is no Camera
+INFO:root:main start!!!
+DEBUG:root:2021-10-27 14:33:00.910583
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+INFO:root:snap button created !!! 
+INFO:root:close button created !!! 
+INFO:root:snapshot_button pushed!!!
+ERROR:root:OS error: [WinError 3] 指定されたパスが見つかりません。: '20211026'
+ERROR:root:20211027/20211027143302.mp4
+INFO:root:snapshot_button pushed!!!
+ERROR:root:OS error: [WinError 3] 指定されたパスが見つかりません。: '20211026'
+ERROR:root:20211027/20211027143317.mp4
+INFO:root:main start!!!
+DEBUG:root:2021-10-27 14:34:46.239586
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:False
+INFO:root:There is no Camera
+INFO:root:main start!!!
+DEBUG:root:2021-10-27 14:35:02.740571
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+INFO:root:snap button created !!! 
+INFO:root:close button created !!! 
+INFO:root:main start!!!
+DEBUG:root:2021-10-27 14:35:55.290727
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+INFO:root:snap button created !!! 
+INFO:root:close button created !!! 
+INFO:root:snapshot_button pushed!!!
+ERROR:root:OS error: [WinError 3] 指定されたパスが見つかりません。: '20211026'
+ERROR:root:20211027/20211027143607.mp4
+INFO:root:snapshot_button pushed!!!
+ERROR:root:OS error: [WinError 3] 指定されたパスが見つかりません。: '20211026'
+ERROR:root:20211027/20211027143623.mp4

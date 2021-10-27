@@ -21,7 +21,7 @@ class Application(tk.Frame):
     flag = 0
     
     # 内蔵カメラの時は0,外付けUSBカメラの時は1にする
-    def __init__(self, master, video_source=0):
+    def __init__(self, master, video_source=1):
         super().__init__(master)
 
         # ---------------------------------------------------------
@@ -187,7 +187,6 @@ class Application(tk.Frame):
         self.video.release()
         self.master.destroy()
         
-
     def video_recode(self):
         # ビデオ入力取得（applicationクラスでなんとかならないか。。。）
         w = self.vcap.get(cv2.CAP_PROP_FRAME_WIDTH)
@@ -217,12 +216,13 @@ class Application(tk.Frame):
 
         # 動画ファイルの保存
         # 動画の仕様（ファイル名、fourcc, FPS, サイズ）
-        video = cv2.VideoWriter(video_name, fourcc, fps, (int(w), int(h)))
+        self.video = cv2.VideoWriter(video_name, fourcc, fps, (int(w), int(h)))
         # 動画の保存処理
         count = 0
+        # 今のこの書き方だと、一つファイルが生成されると終了になる
         while True:
             _, frame = self.vcap.read()
-            video.write(frame)        # 動画を1フレームずつ保存する
+            self.video.write(frame)        # 動画を1フレームずつ保存する
 
             count = count + 1
             if count == (fps * 15):
