@@ -86,6 +86,8 @@ class Application(tk.Frame):
         # ---------------------------------------------------------
         self.delay = 30  # millisecond
         self.threading1 = threading.Thread(target=self.update)
+        # https://blog.novonovo.jp/python/%E3%82%AD%E3%83%A5%E3%83%BC%E3%81%A8%E3%82%B9%E3%83%AC%E3%83%83%E3%83%89/
+        self.threading1.setDaemon(True)
         self.threading1.start()
         # self.update()  # ここで描画する
 
@@ -160,6 +162,7 @@ class Application(tk.Frame):
         # https://qiita.com/ttiger55/items/5e1d5a3405d2b3ef8f40
         
         self.threading2 = threading.Thread(target=self.video_recode)
+        self.threading2.setDaemon(True)
         self.threading2.start()
         # threading.Thread(target=self.video_recode).start()
         # ↓録画をうまく開始できないので一旦消す。　★★★
@@ -182,11 +185,15 @@ class Application(tk.Frame):
             self.flag = 0
 
     def press_close_button(self):
-        self.threading1.join()  # スレッドの後片付け
+        # self.threading1.join()  # スレッドの後片付け
+        # self.threading2.join()
+        
         self.vcap.release()
         self.video.release()
         self.master.destroy()
-        
+        sys.exit()
+        # 終了処理が美しくないが、まずは良しとしたい
+
     def video_recode(self):
         # ビデオ入力取得（applicationクラスでなんとかならないか。。。）
         w = self.vcap.get(cv2.CAP_PROP_FRAME_WIDTH)
@@ -209,24 +216,27 @@ class Application(tk.Frame):
         if not os.path.isdir(folder_name):
             os.mkdir(folder_name)
 
-        video_name = folder_name + "/" + dt_now.strftime(
-            '%Y%m%d%H%M%S') + ".mp4"
-        print(video_name)
-        logging.error(video_name)
-
-        # 動画ファイルの保存
-        # 動画の仕様（ファイル名、fourcc, FPS, サイズ）
-        self.video = cv2.VideoWriter(video_name, fourcc, fps, (int(w), int(h)))
-        # 動画の保存処理
-        count = 0
-        # 今のこの書き方だと、一つファイルが生成されると終了になる
         while True:
-            _, frame = self.vcap.read()
-            self.video.write(frame)        # 動画を1フレームずつ保存する
+            dt_now = datetime.datetime.now()
+            video_name = folder_name + "/" + dt_now.strftime(
+                '%Y%m%d%H%M%S') + ".mp4"
+            print(video_name)
+            logging.error(video_name)
 
-            count = count + 1
-            if count == (fps * 15):
-                break
+            # 動画ファイルの保存
+            # 動画の仕様（ファイル名、fourcc, FPS, サイズ）
+            self.video = cv2.VideoWriter(
+                video_name, fourcc, fps, (int(w), int(h)))
+            # 動画の保存処理
+        
+            count = 0
+            while True:
+                _, frame = self.vcap.read()
+                self.video.write(frame)        # 動画を1フレームずつ保存する
+
+                count = count + 1
+                if count == (fps * 15):   # なんでかよくわからないが21secごとになる
+                    break
             
     def clean_folder(self):
         path = "./"
@@ -249,7 +259,7 @@ class Application(tk.Frame):
                 total, used, free = shutil.disk_usage("/")
                 print('-------Data Check--------------------')
                 print(f'Free:{free/(10**9)}GB')
-                #  残ディスク容量を決める
+                #  残ディスク容量を決める (ここはラズパイにあわせるひつようがあるので注意)
                 if(252.220 > free / (10**9)):
                     print("folder delete")
                     shutil.rmtree(
