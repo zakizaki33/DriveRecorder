@@ -1,7 +1,13 @@
-* 必須パッケージ
-$ pip install pipenv
+# README
 
+## 実行確認環境
+Ubuntu20.04
+## 初期設定方法
+* リポジトリをクローンしたら、下記スクリプトを実行してください。
+    * `$ bash install_module.sh`
+    * 実行はsudo権限のあるユーザーで行ってください。
+    * 実行中にユーザーパスワードを聞かれた場合は入力してください。
 
-* 環境準備
-$ pipenv install
-$ pipenv install --dev
+## 実行方法
+* 下記スクリプトを実行してください
+    * `$ bash autorun.sh`
