@@ -7,3 +7,122 @@ INFO:root:close button created !!!
 INFO:root:snapshot_button pushed!!!
 ERROR:root:OS error: [WinError 3] 指定されたパスが見つかりません。: '20211123'
 ERROR:root:20211124/20211124114008.mp4
+INFO:root:main start!!!
+DEBUG:root:2021-11-26 14:30:35.320434
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+INFO:root:snap button created !!! 
+INFO:root:close button created !!! 
+INFO:root:main start!!!
+DEBUG:root:2021-11-26 14:31:02.125203
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+INFO:root:snap button created !!! 
+INFO:root:close button created !!! 
+INFO:root:main start!!!
+DEBUG:root:2021-11-26 14:31:27.391301
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+INFO:root:snap button created !!! 
+INFO:root:close button created !!! 
+INFO:root:main start!!!
+DEBUG:root:2021-11-26 14:31:40.319298
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+INFO:root:snap button created !!! 
+INFO:root:close button created !!! 
+INFO:root:main start!!!
+DEBUG:root:2021-11-26 14:32:02.351061
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+INFO:root:snap button created !!! 
+INFO:root:close button created !!! 
+INFO:root:main start!!!
+DEBUG:root:2021-11-26 14:33:41.457580
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+INFO:root:snap button created !!! 
+INFO:root:close button created !!! 
+INFO:root:main start!!!
+DEBUG:root:2021-11-26 14:35:43.740596
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+INFO:root:snap button created !!! 
+INFO:root:close button created !!! 
+INFO:root:main start!!!
+DEBUG:root:2021-11-26 14:37:12.476855
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+INFO:root:snap button created !!! 
+INFO:root:close button created !!! 
+INFO:root:main start!!!
+DEBUG:root:2021-11-26 14:37:37.308400
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+INFO:root:snap button created !!! 
+INFO:root:close button created !!! 
+INFO:root:main start!!!
+DEBUG:root:2021-11-26 14:38:26.237985
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+INFO:root:main start!!!
+DEBUG:root:2021-11-26 14:38:46.606654
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+INFO:root:main start!!!
+DEBUG:root:2021-11-26 14:39:23.051730
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+INFO:root:main start!!!
+DEBUG:root:2021-11-26 14:39:57.074526
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+INFO:root:main start!!!
+DEBUG:root:2021-11-26 14:40:33.677924
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+INFO:root:main start!!!
+DEBUG:root:2021-11-26 14:41:23.395813
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+INFO:root:snap button created !!! 
+INFO:root:close button created !!! 
+INFO:root:main start!!!
+DEBUG:root:2021-11-26 14:43:11.475233
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+INFO:root:snap button created !!! 
+INFO:root:close button created !!! 
+INFO:root:main start!!!
+DEBUG:root:2021-11-26 14:44:37.228207
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+INFO:root:snap button created !!! 
+INFO:root:close button created !!! 
+INFO:root:main start!!!
+DEBUG:root:2021-11-26 14:44:56.281313
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+INFO:root:snap button created !!! 
+INFO:root:close button created !!! 
+INFO:root:main start!!!
+DEBUG:root:2021-11-26 14:45:05.368448
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+INFO:root:snap button created !!! 
+INFO:root:close button created !!! 
+INFO:root:main start!!!
+DEBUG:root:2021-11-26 14:46:11.632967
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+INFO:root:close button created !!! 
+INFO:root:main start!!!
+DEBUG:root:2021-11-26 14:46:24.194360
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+INFO:root:close button created !!! 
+INFO:root:main start!!!
+DEBUG:root:2021-11-26 14:49:29.289073
+DEBUG:root:<class 'cv2.VideoCapture'>
+DEBUG:root:True
+INFO:root:close button created !!! 
