@@ -14,8 +14,9 @@ class App:
         self.vcap = cv2.VideoCapture(0)
 
         # VideoCapture VideoWriter の画面サイズが合っていないと上手く動画が保存できない
-        self.width = int(self.vcap.get(cv2.CAP_PROP_FRAME_WIDTH)/2)  # default 640
-        self.height = int(self.vcap.get(cv2.CAP_PROP_FRAME_HEIGHT)/2) # default 320
+        # default 640 x 480
+        self.width = int(self.vcap.get(cv2.CAP_PROP_FRAME_WIDTH) / 2)
+        self.height = int(self.vcap.get(cv2.CAP_PROP_FRAME_HEIGHT) / 2)
         self.fps = int(self.vcap.get(cv2.CAP_PROP_FPS))
         self.fourcc = cv2.VideoWriter_fourcc('m', 'p', '4', 'v')
 
