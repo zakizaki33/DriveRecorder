@@ -10,26 +10,33 @@ class App:
         self.window = window
         self.window.title(window_title)
         # 内臓カメラだと０、外付けUSBカメラだと１を入れる
-        self.vcap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
-        self.width = int(self.vcap.get(cv2.CAP_PROP_FRAME_WIDTH))
-        self.height = int(self.vcap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+        # self.vcap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
+        self.vcap = cv2.VideoCapture(0)
+
+        # VideoCapture VideoWriter の画面サイズが合っていないと上手く動画が保存できない
+        self.width = int(self.vcap.get(cv2.CAP_PROP_FRAME_WIDTH)/2)  # default 640
+        self.height = int(self.vcap.get(cv2.CAP_PROP_FRAME_HEIGHT)/2) # default 320
         self.fps = int(self.vcap.get(cv2.CAP_PROP_FPS))
         self.fourcc = cv2.VideoWriter_fourcc('m', 'p', '4', 'v')
 
         # カメラモジュールの映像を表示するキャンバスを用意する
         self.canvas = tkinter.Canvas(
             window, width=self.width, height=self.height)
-        self.canvas.pack()
+        self.canvas.pack(fill='x', side='left')
 
         # STARTボタン
         self.start_btn = tkinter.Button(window, text="START")
-        self.start_btn.pack()
+        # self.start_btn.pack()
+        self.start_btn.pack(fill='x', side='top')
         self.start_btn.configure(command=self.update)
+        self.start_btn.configure(width=20, height=5)
 
         # Closeボタン
         self.close_btn = tkinter.Button(window, text="Close")
-        self.close_btn.pack()
+        # self.close_btn.pack()
+        self.close_btn.pack(fill='x', side='top')
         self.close_btn.configure(command=self.destructor)
+        self.close_btn.configure(width=20, height=5)
 
         # update()関数を15ミリ秒ごとに呼び出し、キャンバスの映像を更新する
         self.delay = 15
@@ -43,7 +50,8 @@ class App:
         self.name = "video" + datetime.datetime.today().strftime(
             '%Y%m%d_%H%M%S') + ".mp4"
         self.video = cv2.VideoWriter(
-            self.name, self.fourcc, 30.0, (self.width, self.height))
+            # self.name, self.fourcc, 30.0, (self.width, self.height))
+            self.name, self.fourcc, 30.0, (640, 480))
         # (保存名前、fourcc,fps,サイズ)
 
         # 30FPS * 5sec

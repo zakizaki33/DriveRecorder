@@ -12,7 +12,7 @@ class App:
         # 内臓カメラだと０、外付けUSBカメラだと１を入れる
         self.vcap = cv2.VideoCapture(0)
         # self.width = int(self.vcap.get(cv2.CAP_PROP_FRAME_WIDTH))
-        self.width =600
+        self.width = 600
         # self.height = int(self.vcap.get(cv2.CAP_PROP_FRAME_HEIGHT))
         self.height = 400
         self.fps = int(self.vcap.get(cv2.CAP_PROP_FPS))
